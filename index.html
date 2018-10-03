@@ -9,6 +9,8 @@
 
 </head>
 <body>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
       <a class="navbar-brand" href="#">Translate Magic</a>
@@ -26,15 +28,35 @@
 
     <div class="jumbotron text-center">
         Picture here?
+        <button onclick="testfunc()">Hello</button>
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 text-center">
-                Test
+            <div class="col-sm-6 search-col">
+                <div class="dropdown">
+                    <p>Number of translation rounds:</p>
+                    <select class="form-control" id="numberChoice">
+                      <option>Select a number</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5-10</option>
+                      <option>10-15</option>
+                      <option>15-20</option>
+                    </select>
+                </div>
+                <div class="top-buffer">
+                    <p>Choose a Magic Card:</p>
+                    <form class="form-inline my-2 my-lg-0" action="">
+                        <input class="form-control mr-sm-2" type="text" id="searchField" placeholder="Search Magic Cards">
+                        <input class="btn submit-button my-2 my-sm-0" type="submit" id="submitCard" value="Search">
+                    </form>
+                </div>
+                <img class="top-buffer" src="https://via.placeholder.com/350x500"></a>
             </div>
             <div class="col-sm-6 text-center">
-                Test
             </div>
         </div>
     </div>
@@ -43,6 +65,5 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

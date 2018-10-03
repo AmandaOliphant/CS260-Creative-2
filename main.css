@@ -1,3 +1,16 @@
 body {
     background-color: black;
 }
+
+.top-buffer {
+    margin-top: 20px;
+}
+
+.search-col {
+    color: white;
+}
+
+.submit-button {
+    background-color: #4d004d;
+    color: white;
+}
