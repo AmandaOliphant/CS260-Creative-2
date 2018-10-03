@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
     <title>Creative2</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script type="text/javascript" src="script.js"></script>
+
 </head>
 <body>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="scripts.js"></script>
 
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand" href="#">Translate Magic</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -21,8 +20,8 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav mr-auto">
           <a class="nav-item nav-link active" href="">Home<span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="my-recs.html">Page1</a>
-          <a class="nav-item nav-link" href="rec-list.html">Page2</a>
+          <a class="nav-item nav-link" href="#">Page1</a>
+          <a class="nav-item nav-link" href="#">Page2</a>
         </ul>
          </div>
     </nav>
@@ -30,19 +29,23 @@
     <div class="jumbotron text-center">
         Picture here?
     </div>
-    
-    
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 text-center">
-                <form>
-<!--                    Display Card Name Suggestions on Upkey-->
-                    Enter A Card Name: <input type="text" id="cardNameField" value="">
-                    <input onclick="searchCardNames()" type="button" value="Submit"><br>
-                    <span id="txtHint"></span>
-                </form>
+
             <div class="col-sm-6 search-col">
+                <div>
+                    <p>Choose a Magic Card:</p>
+                    <form class="form-inline my-2 my-lg-0" action="">
+                        <input class="form-control mr-sm-2 col-lg-8" type="text" id="cardNameField" list="card-datalist" placeholder="Search Magic Cards">
+                        <datalist id="card-datalist"></datalist>
+                        <input class="btn submit-button my-2 my-sm-0" type="submit" id="submitCard" value="Search">
+                    </form>
+                </div>
+                <img class="top-buffer" id="cardImage" src=""></a>
+            </div>
+
+            <div class="col-sm-6">
                 <div class="dropdown">
                     <p>Number of translation rounds:</p>
                     <select class="form-control" id="numberChoice">
@@ -51,27 +54,18 @@
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
-                      <option>5-10</option>
-                      <option>10-15</option>
-                      <option>15-20</option>
+                      <option>5</option>
+                      <option>10</option>
+                      <option>15</option>
                     </select>
                 </div>
-                <div class="top-buffer">
-                    <p>Choose a Magic Card:</p>
-                    <form class="form-inline my-2 my-lg-0" action="">
-                        <input class="form-control mr-sm-2" type="text" id="searchField" placeholder="Search Magic Cards">
-                        <input class="btn submit-button my-2 my-sm-0" type="submit" id="submitCard" value="Search">
-                    </form>
-                </div>
-                <img class="top-buffer" src="https://via.placeholder.com/350x500"></a>
-            </div>
-            <div class="col-sm-6 text-center">
-                Test
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-=======
->>>>>>> 419f608fcb5c709f6340c4b6cac4ffa9c68d925d
+
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
