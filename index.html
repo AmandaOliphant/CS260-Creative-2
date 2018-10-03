@@ -10,6 +10,8 @@
     <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
       <a class="navbar-brand" href="#">Translate Magic</a>
@@ -40,11 +42,36 @@
                     <input onclick="searchCardNames()" type="button" value="Submit"><br>
                     <span id="txtHint"></span>
                 </form>
+            <div class="col-sm-6 search-col">
+                <div class="dropdown">
+                    <p>Number of translation rounds:</p>
+                    <select class="form-control" id="numberChoice">
+                      <option>Select a number</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5-10</option>
+                      <option>10-15</option>
+                      <option>15-20</option>
+                    </select>
+                </div>
+                <div class="top-buffer">
+                    <p>Choose a Magic Card:</p>
+                    <form class="form-inline my-2 my-lg-0" action="">
+                        <input class="form-control mr-sm-2" type="text" id="searchField" placeholder="Search Magic Cards">
+                        <input class="btn submit-button my-2 my-sm-0" type="submit" id="submitCard" value="Search">
+                    </form>
+                </div>
+                <img class="top-buffer" src="https://via.placeholder.com/350x500"></a>
             </div>
             <div class="col-sm-6 text-center">
                 Test
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+=======
+>>>>>>> 419f608fcb5c709f6340c4b6cac4ffa9c68d925d
 </body>
 </html>
