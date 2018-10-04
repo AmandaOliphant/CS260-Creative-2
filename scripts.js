@@ -4,9 +4,8 @@ $(document).ready(function() {
         e.preventDefault();
         var value = $("#cardNameField").val();
         console.log(value);
-        var image = $("#cardImage").attr("src",)
-        image.attr="http://www.wizards.com/magic/autocard.asp?name=Call of the Herd"
-
+        var image = $("#cardImage").attr("src",image.attr="http://www.wizards.com/magic/autocard.asp?name="+value);
+//        image.attr="http://www.wizards.com/magic/autocard.asp?name=Call of the Herd";
     })
 
     $("#translateCard").click(function(e) {
@@ -42,8 +41,15 @@ $(document).ready(function() {
 
              },
              complete:function() {
-                 translate(0, numRounds, cardDescription, "#cardDescription");
-                 translate(0, numRounds, cardName, "#cardName");
+                 translate(0, numRounds, cardType, "cardType");
+                 translate(0, numRounds, cardDescription, "cardDescription");
+                 translate(0, numRounds, cardName, "cardName");
+                 if(cardFlavor != null){
+                     translate(0, numRounds, cardFlavor, "cardFlavor");
+                 }
+                 if(cardRarity != null){
+                     translate(0, numRounds, cardRarity, "cardRarity");
+                 }
              }
          });
 
@@ -95,6 +101,7 @@ $(document).ready(function() {
 });
 
 function translate(index, numRounds, description, objID) {
+    console
     var targetLang = ['af', 'ko', 'ga', 'ja', 'kn', 'la', 'eu', 'bn', 'ar', 'sq', 'af', 'ca', 'mk', 'mt', 'no', 'fa', 'nl',
                        'gl', 'ka', 'de', 'sv', 'gu', 'hi', 'iw', 'ur', 'cy', 'yi'];
 
@@ -119,7 +126,7 @@ function translate(index, numRounds, description, objID) {
             }
             if(index < numRounds) {
                 index += 1;
-                translate(index, numRounds, description);
+                translate(index, numRounds, description, objID);
             }
             else {
                 translateEnglish(description, objID);
@@ -139,17 +146,21 @@ function translateEnglish(description, objID) {
         success:function(data) {
             console.log(data);
             description = data[0][0][0];
-            if(data[0][1] != null) {
-                if(data[0][1][0] != null) {
-                    description += data[0][1][0];
+            for(var i = 0; i < data[0].length; i++){
+                if(data[0][i] != null) {
+                    if(data[0][i][0] != null) {
+                        description += data[0][i][0];
+                    }
                 }
             }
-            
-            if(objID == "#cardName") {
+            if(objID == "cardName") {
                 $("#cardName").text(description);
             }
-            else if(objID == "#cardDescription") {
+            else if(objID == "cardDescription") {
                 $("#cardDescription").text(description);
+            }
+            else if(objID == "cardType"){
+                $("#cardType").text(description);
             }
         }
     })
