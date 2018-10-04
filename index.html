@@ -20,8 +20,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav mr-auto">
           <a class="nav-item nav-link active" href="">Home<span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#">Page1</a>
-          <a class="nav-item nav-link" href="#">Page2</a>
+          <a class="nav-item nav-link" href="#">About</a>
         </ul>
          </div>
     </nav>
@@ -35,7 +34,7 @@
 
             <div class="col-sm-6 search-col">
                 <div>
-                    <p>Choose a Magic Card:</p>
+                    <h5>Choose a Magic Card:</h5>
                     <form class="form-inline my-2 my-lg-0" action="">
                         <input class="form-control mr-sm-2 col-lg-8" type="text" id="cardNameField" list="card-datalist" placeholder="Search Magic Cards">
                         <datalist id="card-datalist"></datalist>
@@ -47,7 +46,7 @@
 
             <div class="col-sm-6">
                 <div class="dropdown">
-                    <p>Number of translation rounds:</p>
+                    <h5>Number of translation rounds:</h5>
                     <select class="form-control" id="numberChoice">
                       <option>Select a number</option>
                       <option>1</option>
@@ -58,6 +57,16 @@
                       <option>10</option>
                       <option>15</option>
                     </select>
+                </div>
+                <div class="top-buffer">
+                    <input class="btn submit-button my-2 my-sm-0" type="submit" id="translateCard" value="Translate Card">
+                </div>
+                <div class="top-buffer">
+                    <h4 id="cardName"></h4>
+                    <p id="cardRarity"></p>
+                    <p id="cardType"></p>
+                    <p id="cardFlavor"></p>
+                    <p id="cardDescription"></p>
                 </div>
             </div>
         </div>
