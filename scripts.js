@@ -49,13 +49,13 @@ $(document).ready(function() {
              },
              complete:function() {
                  translate(0, numRounds, cardType, "cardType");
-                 translate(0, numRounds, cardDescription, "cardDescription");
-                 translate(0, numRounds, cardName, "cardName");
+                 setTimeout(translate(0, numRounds, cardDescription, "cardDescription"), 1000);
+                 setTimeout(translate(0, numRounds, cardName, "cardName"), 2000);
                  if(cardFlavor != null){
-                     translate(0, numRounds, cardFlavor, "cardFlavor");
+                     setTimeout(translate(0, numRounds, cardFlavor, "cardFlavor"), 3000);
                  }
                  if(cardRarity != null){
-                     translate(0, numRounds, cardRarity, "cardRarity");
+                     setTimeout(translate(0, numRounds, cardRarity, "cardRarity"), 4000);
                  }
              }
          });
@@ -135,11 +135,14 @@ function translate(index, numRounds, description, objID) {
             }
             if(index < numRounds) {
                 index += 1;
-                translate(index, numRounds, description, objID);
+                setTimeout(translate(index, numRounds, description, objID), 1000);
             }
             else {
-                translateEnglish(description, objID);
+                setTimeout(translateEnglish(description, objID), 1000);
             }
+        },
+        error:function(){
+            alert("Max number of translations hit!");
         }
     })
 }
