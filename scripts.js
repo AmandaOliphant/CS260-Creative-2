@@ -83,7 +83,7 @@ $(document).ready(function() {
                  var cards = data.cards;
                  $.each(cards, function(index, value) {
                      var cardName = value.name.toUpperCase();
-                     if(cardName.includes($("#cardNameField").val().toUpperCase())) {
+                     if(cardName.startsWith($("#cardNameField").val().toUpperCase())) {
                         var doesExist = false;
                         for (i = 0; i<dataList.options.length; i++) {
                             if (dataList.options.item(i).value === value.name) {
