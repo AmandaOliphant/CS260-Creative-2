@@ -6,33 +6,19 @@
     <title>Creative2</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!--Import Font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 </head>
 <body>
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="scripts.js"></script>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand" href="#">Translate Magic</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul class="navbar-nav mr-auto">
-          <a class="nav-item nav-link active" href="">Home<span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#">About</a>
-        </ul>
-         </div>
-    </nav>
-
-    <div class="jumbotron text-center">
-        Picture here?
-    </div>
+    <div id="titleImg" class="jumbotron text-right"><span style="padding-right: 5%">Magic</span><br><span style="padding-right: 5%">Translater</span></div>
 
     <div class="container">
         <div class="row">
 
-            <div class="col-sm-6 search-col">
+            <div class="col-lg-6 search-col">
                 <div>
                     <h5>Choose a Magic Card:</h5>
                     <form class="form-inline my-2 my-lg-0" action="">
@@ -44,7 +30,7 @@
                 <img class="top-buffer" id="cardImage" src=""></a>
             </div>
 
-            <div class="col-sm-6">
+            <div class="col-lg-6">
                 <div class="dropdown">
                     <h5>Number of translation rounds:</h5>
                     <select class="form-control" id="numberChoice">
@@ -61,10 +47,10 @@
                 </div>
                 <div class="top-buffer">
                     <h4 id="cardName"></h4>
-                    <p id="cardRarity"></p>
                     <p id="cardType"></p>
-                    <p id="cardFlavor"></p>
+                    <p id="cardRarity"></p>
                     <p id="cardDescription"></p>
+                    <p id="cardFlavor"></p>
                 </div>
             </div>
         </div>
