@@ -1,12 +1,18 @@
 $(document).ready(function() {
-
     $("#submitCard").click(function(e) {
         e.preventDefault();
         var value = $("#cardNameField").val();
-        console.log(value);
-        var image = $("#cardImage").attr("src",)
-        image.attr="http://www.wizards.com/magic/autocard.asp?name=Call of the Herd"
-
+        var url = "https://api.scryfall.com/cards/named?exact="+value;
+        
+        $.ajax({
+             type:'GET',
+             url: url,
+             dataType:'json',
+             success:function(data){
+                console.log(data);
+                document.getElementById("cardImage").src=data["image_uris"]["normal"];
+             }
+         });
     })
 
     $("#translateCard").click(function(e) {
@@ -27,7 +33,7 @@ $(document).ready(function() {
                  var cards = data.cards;
                  $.each(cards, function(index, value) {
                      var cardName = value.name;
-                     if(cardName.toUpperCase() === $("#cardNameField").val().toUpperCase()) {
+                     if(cardName.toUpperCase().indexOf($("#cardNameField").val().toUpperCase()) !== -1) {
                          cardRarity = value.rarity;
                          cardType = value.type;
                          cardFlavor = value.flavor;
@@ -42,9 +48,15 @@ $(document).ready(function() {
 
              },
              complete:function() {
+                 translate(0, numRounds, cardType, "cardType");
                  translate(0, numRounds, cardDescription, "cardDescription");
                  translate(0, numRounds, cardName, "cardName");
-                 translate(0, numRounds, cardType, "cardType");
+                 if(cardFlavor != null){
+                     translate(0, numRounds, cardFlavor, "cardFlavor");
+                 }
+                 if(cardRarity != null){
+                     translate(0, numRounds, cardRarity, "cardRarity");
+                 }
              }
          });
 
@@ -96,6 +108,7 @@ $(document).ready(function() {
 });
 
 function translate(index, numRounds, description, objID) {
+    console
     var targetLang = ['af', 'ko', 'ga', 'ja', 'kn', 'la', 'eu', 'bn', 'ar', 'sq', 'af', 'ca', 'mk', 'mt', 'no', 'fa', 'nl',
                        'gl', 'ka', 'de', 'sv', 'gu', 'hi', 'iw', 'ur', 'cy', 'yi'];
 
@@ -113,9 +126,11 @@ function translate(index, numRounds, description, objID) {
         success:function(data) {
             console.log(data);
             description = data[0][0][0];
-            if(data[0][1] != null) {
-                if(data[0][1][0] != null) {
-                    description += data[0][1][0];
+            for(var i = 1; i < data[0].length; i++){
+                if(data[0][i] != null) {
+                    if(data[0][i][0] != null) {
+                        description += data[0][i][0];
+                    }
                 }
             }
             if(index < numRounds) {
@@ -140,9 +155,11 @@ function translateEnglish(description, objID) {
         success:function(data) {
             console.log(data);
             description = data[0][0][0];
-            if(data[0][1] != null) {
-                if(data[0][1][0] != null) {
-                    description += data[0][1][0];
+            for(var i = 1; i < data[0].length; i++){
+                if(data[0][i] != null) {
+                    if(data[0][i][0] != null) {
+                        description += data[0][i][0];
+                    }
                 }
             }
 
@@ -152,8 +169,14 @@ function translateEnglish(description, objID) {
             else if(objID == "cardDescription") {
                 $("#cardDescription").text(description);
             }
-            else if(objID == "cardType") {
+            else if(objID == "cardType"){
                 $("#cardType").text(description);
+            }
+            else if(objID == "cardFlavor"){
+                $("#cardFlavor").text(description);
+            }
+            else if(objID == "cardRarity"){
+                $("#cardRarity").text(description);
             }
         }
     })
