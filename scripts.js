@@ -42,8 +42,9 @@ $(document).ready(function() {
 
              },
              complete:function() {
-                 translate(0, numRounds, cardDescription, "#cardDescription");
-                 translate(0, numRounds, cardName, "#cardName");
+                 translate(0, numRounds, cardDescription, "cardDescription");
+                 translate(0, numRounds, cardName, "cardName");
+                 translate(0, numRounds, cardType, "cardType");
              }
          });
 
@@ -119,7 +120,7 @@ function translate(index, numRounds, description, objID) {
             }
             if(index < numRounds) {
                 index += 1;
-                translate(index, numRounds, description);
+                translate(index, numRounds, description, objID);
             }
             else {
                 translateEnglish(description, objID);
@@ -144,12 +145,15 @@ function translateEnglish(description, objID) {
                     description += data[0][1][0];
                 }
             }
-            
-            if(objID == "#cardName") {
+
+            if(objID == "cardName") {
                 $("#cardName").text(description);
             }
-            else if(objID == "#cardDescription") {
+            else if(objID == "cardDescription") {
                 $("#cardDescription").text(description);
+            }
+            else if(objID == "cardType") {
+                $("#cardType").text(description);
             }
         }
     })
