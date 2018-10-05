@@ -135,10 +135,10 @@ function translate(index, numRounds, description, objID) {
             }
             if(index < numRounds) {
                 index += 1;
-                setTimeout(translate(index, numRounds, description, objID), 1000);
+                translate(index, numRounds, description, objID);
             }
             else {
-                setTimeout(translateEnglish(description, objID), 1000);
+                translateEnglish(description, objID);
             }
         },
         error:function(){
