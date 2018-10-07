@@ -49,13 +49,13 @@ $(document).ready(function() {
              },
              complete:function() {
                  translate(0, numRounds, cardType, "cardType");
-                 setTimeout(translate(0, numRounds, cardDescription, "cardDescription"), 1000);
-                 setTimeout(translate(0, numRounds, cardName, "cardName"), 2000);
+                 translate(0, numRounds, cardDescription, "cardDescription");
+                 translate(0, numRounds, cardName, "cardName");
                  if(cardFlavor != null){
-                     setTimeout(translate(0, numRounds, cardFlavor, "cardFlavor"), 3000);
+                     translate(0, numRounds, cardFlavor, "cardFlavor");
                  }
                  if(cardRarity != null){
-                     setTimeout(translate(0, numRounds, cardRarity, "cardRarity"), 4000);
+                     translate(0, numRounds, cardRarity, "cardRarity");
                  }
              }
          });
